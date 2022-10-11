@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  src: url("roboto.woff2") format("woff2"),
+    url("roboto.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-style: normal;
+  src: url("robotobold.woff2") format("woff2"),
+    url("robotobold.woff") format("woff");
+
+}
+
+.page-body {
+  background: #f2f2f2;
+  padding: 0;
+  margin: 0;
+}
+
+.page-container {
+  width: 1200px;
+  background: #ffffff;
+  margin: 0 auto;
+
+}
+
+.page-header {
+  padding: 0 70px;
+  background: #ffffff;
+  margin: 0;
+
+}
+
+.visually-hidden {
+  font-family: "Roboto", "Arials", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+}
+
+.advantages-description {
+  Font family: PT Sans;
+  Font style: Bold;
+  Font size: 30px;
+}
+
+
+.welcome-img {
+  background-image: url(../images/main-header-background.jpg);
+  width: 1200px;
+  height: 485px;
+}
