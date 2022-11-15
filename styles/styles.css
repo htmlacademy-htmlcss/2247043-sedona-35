@@ -775,12 +775,6 @@ html {
   display: flex;
 }
 
-fieldset {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
 .filter-form {
   margin-bottom: 50px;
   padding-bottom: 38px;
@@ -789,6 +783,7 @@ fieldset {
 .filter-column {
   padding: 0;
   margin: 0;
+  border: 0;
 }
 
 .input-title {
