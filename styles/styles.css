@@ -460,6 +460,9 @@ html {
   padding: 0;
 }
 
+.page-footer {
+  padding-bottom: 10px;
+}
 
 .search-hotels {
   text-align: center;
@@ -576,16 +579,34 @@ html {
 }
 
 .filed {
+  font-family: "PT Sans", "Arial", sans-serif;
   width: 458px;
   min-height: 46px;
   border-radius: 4px 0 0 4px;
-  border: none;
+  border: 3px solid transparent;
   background-color: #f2f2f2;
   font-weight: 400;
   font-size: 17px;
   line-height: 24px;
   box-sizing: border-box;
   padding: 0 22px;
+}
+
+.filed::placeholder {
+  color: #000000;
+}
+
+.filed:hover {
+  background-color: #e6e6e6;
+}
+
+.filed:focus {
+  border-color: #83b3d3;
+  outline: none;
+}
+
+.filed:active {
+  border-color: #000000;
 }
 
 .subscribe-button {
@@ -614,6 +635,7 @@ html {
 
 .subscribe-button:focus {
   background-color: #68a2ca;
+  outline: none;
 }
 
 .subscribe-button:active {
@@ -654,7 +676,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
-  margin-left: 181px;
+  margin: 10px 0 0 181px;
   padding: 0;
 }
 
@@ -662,11 +684,9 @@ html {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
-  margin-left: 181px;
   padding: 0;
+  margin: 10px 0 0 181px;
 }
-
-.socials-item {}
 
 .socials-link {
   text-decoration: none;
@@ -699,20 +719,17 @@ html {
   color: #000000;
 }
 
-.socials-svg-phone {
-  fill: #000000;
+
+.socials-link-phone:hover {
+  color: #756157;
 }
 
-.socials-link-phone:hover .socials-svg-phone {
-  fill: #756157;
+.socials-link-phone:focus {
+  color: #756157;
 }
 
-.socials-link-phone:focus .socials-svg-phone {
-  fill: #756157;
-}
-
-.socials-link-phone:active .socials-svg-phone {
-  fill: #7561574d;
+.socials-link-phone:active {
+  color: #7561574d;
 }
 
 .socials-svg-logo {
@@ -738,8 +755,6 @@ html {
   background-position: center top;
   background-size: cover;
 }
-
-.filter-content {}
 
 .filter-title {
   margin: 0;
@@ -929,7 +944,7 @@ fieldset {
   left: -27px;
   width: 20px;
   height: 20px;
-  border: 1px solid #ffffff;
+  border: 3px solid #ffffff;
   background-color: #ffffff;
   border-radius: 4px;
 }
@@ -938,12 +953,12 @@ fieldset {
   opacity: 0.6;
 }
 
-.control:focus {
+.control-input:focus + .control-mark {
   border-color: #83b3d3;
   outline: none;
 }
 
-.control:active {
+.control-input:active + .control-mark {
   opacity: 0.3;
 }
 
@@ -997,7 +1012,7 @@ fieldset {
   left: -27px;
   width: 20px;
   height: 20px;
-  border: 1px solid #ffffff;
+  border: 3px solid #ffffff;
   background-color: #ffffff;
   border-radius: 50%;
 }
@@ -1006,12 +1021,12 @@ fieldset {
   opacity: 0.6;
 }
 
-.control-radio:focus {
+.control-input:focus + .control-mark-radio {
   border-color: #83B3D3;
   outline: none;
 }
 
-.control-radio:active {
+.control-input:active + .control-mark-radio {
   opacity: 0.3;
 }
 
@@ -1250,8 +1265,6 @@ fieldset {
 
 .sorting-view-link:active {
   border-color: #000000;
-  width: 79px;
-  height: 48px;
 }
 
 .sorting-view-first::after {
@@ -1280,8 +1293,6 @@ fieldset {
   width: 16px;
   height: 14px;
 }
-
-.catalog {}
 
 .catalog-list {
   display: grid;
@@ -1846,6 +1857,7 @@ fieldset {
   display: flex;
   width: 110px;
   background: #f2f2f2;
+  position: relative;
 }
 
 .modal-filed-people {
@@ -1857,6 +1869,11 @@ fieldset {
   font-size: 18px;
   line-height: 20px;
   color: #000000;
+  position: absolute;
+  top: 0;
+  left: 37px;
+  height: 38px;
+  padding-top: 6px;
 }
 
 .modal-filed-people::placeholder {
@@ -1865,28 +1882,52 @@ fieldset {
 
 .button-minus {
   border: 3px solid transparent;
-  width: 40px;
+  width: 20px;
+  height: 20px;
   border-radius: 4px;
   cursor: pointer;
+  position: absolute;
+  top: 17px;
+  left: 11px;
 }
 
 .button-plus {
   border: 3px solid transparent;
-  width: 40px;
+  width: 20px;
+  height: 20px;
   border-radius: 4px;
   cursor: pointer;
+  position: absolute;
+  top: 17px;
+  right: 9px;
+}
+
+.button-minus:focus {
+  outline: none;
+  border-color: #83b3d3;
+}
+
+.button-plus:focus {
+  outline: none;
+  border-color: #83b3d3;
 }
 
 .svg-minus {
   fill: #7561574d;
   border: 3px solid transparent;
   border-radius: 4px;
+  position: absolute;
+  top: 3px;
+  left: -3px;
 }
 
 .svg-plus {
   fill: #7561574d;
   border: 3px solid transparent;
   border-radius: 4px;
+  position: absolute;
+  top: -3px;
+  left: -3px;
 }
 
 .button-minus:hover .svg-minus {
@@ -1895,7 +1936,6 @@ fieldset {
 
 .button-minus:focus .svg-minus {
   fill: #000000;
-  border-color: #83b3d3;
 }
 
 .button-minus:active .svg-minus {
@@ -1908,7 +1948,6 @@ fieldset {
 
 .button-plus:focus .svg-plus {
   fill: #000000;
-  border-color: #83b3d3;
 }
 
 .button-plus:active .svg-plus {
